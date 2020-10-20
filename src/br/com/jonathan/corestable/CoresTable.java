@@ -56,6 +56,12 @@ public class CoresTable extends JPanel {
                 return component;
             }
         };
+        jTable.setAutoCreateRowSorter(true);
+        //jTable.setPreferredScrollableViewportSize(jTable.getPreferredSize());
+        jTable.getColumnModel().getColumn(0).setPreferredWidth(150);
+        jTable.getColumnModel().getColumn(1).setPreferredWidth(50);
+        jTable.getColumnModel().getColumn(2).setPreferredWidth(200);
+        jTable.getColumnModel().getColumn(3).setPreferredWidth(40);
         return new JScrollPane(jTable);
     }
     
