@@ -5,14 +5,12 @@
  */
 package br.com.jonathan.corestable;
 
-import java.awt.Component;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
 import javax.swing.JTable;
-import javax.swing.WindowConstants;
 import javax.swing.table.DefaultTableModel;
 
 /**
