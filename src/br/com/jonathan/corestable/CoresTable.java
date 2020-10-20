@@ -5,6 +5,8 @@
  */
 package br.com.jonathan.corestable;
 
+import java.awt.Color;
+import java.awt.Component;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -12,6 +14,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableCellRenderer;
 
 /**
  *
@@ -44,7 +47,14 @@ public class CoresTable extends JPanel {
 
     private JComponent CoresAlternadas (DefaultTableModel defaultTableModel){
         JTable jTable = new JTable(defaultTableModel) {
-            
+            @Override
+            public Component prepareRenderer (TableCellRenderer renderer, int row, int column){
+                Component component = super.prepareRenderer(renderer, row, column);
+                if (!isRowSelected(row)) {
+                    component.setBackground(row % 2 == 0 ? Color.ORANGE: Color.WHITE);
+                }
+                return component;
+            }
         };
         return new JScrollPane(jTable);
     }
